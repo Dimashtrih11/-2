@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background: #222;
+    color: #fff;
+    padding: 10px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+hr {
+    margin: 0;
+}
+.flashes {
+    list-style: none;
+    padding: 0;
+}
+.flashes li {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+}
+.flashes .success { background: #d4edda; color: #155724; }
+.flashes .danger { background: #f8d7da; color: #721c24; }
+.flashes .info { background: #d1ecf1; color: #0c5460; }
+.flashes .warning { background: #fff3cd; color: #856404; } 

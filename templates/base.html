@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Сайт про CS2, Dota 2 и Standoff{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/cs2">CS2</a> |
+        <a href="/dota2">Dota 2</a> |
+        <a href="/standoff">Standoff</a> |
+        <a href="/news">Новости</a> |
+        <a href="/guides">Гайды</a> |
+        <a href="/gallery">Галерея</a> |
+        <a href="/videos">Видео</a> |
+        <a href="/tournaments">Турниры</a> |
+        <a href="/rating">Рейтинг</a> |
+        <a href="/forum">Форум</a> |
+        {% if session.get('user_id') %}
+            <a href="/profile">Профиль</a> |
+            <a href="/logout">Выйти</a>
+        {% else %}
+            <a href="/login">Вход</a> |
+            <a href="/register">Регистрация</a>
+        {% endif %}
+    </nav>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html> 
